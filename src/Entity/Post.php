@@ -40,6 +40,7 @@ class Post
     private $image;
 
     /**
+     * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime")
      */
     private $createdAt;
@@ -83,6 +84,11 @@ class Post
         return $this->slug;
     }
     /*
+    // -----------------------------------------------
+    // Le setSlug est alimenté automatiquement. 
+    // Voir plus haut "gedmo\Slug(fields={"title"})"
+    // -----------------------------------------------
+
     public function setSlug(string $slug): self
     {
         $this->slug = $slug;
